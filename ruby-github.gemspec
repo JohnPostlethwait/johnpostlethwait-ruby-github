@@ -13,4 +13,5 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files  = ["History.txt", "Manifest.txt", "README.txt"]
 
   s.add_dependency("mash", [">= 0.1.1"])
+  s.add_dependency("json", [">= 1.4.6"])
 end

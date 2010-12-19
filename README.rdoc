@@ -10,11 +10,11 @@ Gem:
 
 The gem is hosted on GitHub so you will need to execute the first line if you have not installed any gems from GitHub before.
 
-  sudo gem install mbleigh-ruby-github --source=http://gems.github.com
+  sudo gem install ruby-github --source=http://gems.github.com
 
 GitHub Clone:
 
-  git clone git://github.com/mbleigh/ruby-github.git
+  git clone git://github.com/JohnPostlethwait/ruby-github.git
 
 = DEPENDENCIES:
 
