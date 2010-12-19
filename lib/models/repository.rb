@@ -15,11 +15,14 @@ module GitHub
       return repositories
     end
 
-    # Finds a specific public repository for a specific username.
+    # Finds a specific public repository for a specific username. You may 
+    # optionally pass in an api_username and an api_token if you would like to
+    # make calls to the API that are reserved to private/authenticated usage.
     # 
     # Usage:  GitHub::Repository.find 'JohnPostlethwait', 'ruby-github'
-    def self.find(user, repository_name)
-      repository = GitHub::API.json("/repos/show/#{user}/#{repository_name}")['repository']
+    def self.find(user, repository_name, args = {})
+      repository = GitHub::API.json("/repos/show/#{user}/#{repository_name}", args)['repository']
+      repository = repository.merge({ :api_options => args })
 
       return self.new(repository)
     end
@@ -79,7 +82,7 @@ module GitHub
     # the 'master' branch, but this can be overridden (passed in as an 
     # argument.)
     def commits(branch = 'master')
-      raw_commits = GitHub::API.json("/commits/list/#{self.owner}/#{self.name}/#{branch}")["commits"]
+      raw_commits = GitHub::API.json("/commits/list/#{self.owner}/#{self.name}/#{branch}", self.api_options)["commits"]
       commits = []
 
       raw_commits.each do |c|

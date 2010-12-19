@@ -4,6 +4,8 @@ module GitHub
     def self.find(username)
       user = GitHub::API.json("/user/show/#{username}")["user"]
 
+      return nil if user.nil?
+
       return self.new(user)
     end
 
@@ -18,6 +20,19 @@ module GitHub
       end
 
       return users
+    end
+
+    # Returns an array of GitHub::Organization objects representing all of the
+    # public organizations the user is a member of.
+    def organizations
+      raw_organizations = GitHub::API.json("/user/show/#{self.login}/organizations")['organizations']
+      organizations = []
+
+      raw_organizations.each do |organization|
+        organizations << GitHub::Organization.new(organization)
+      end
+
+      return organizations
     end
 
     # Returns an array of GitHub::Repository objects for this user.
