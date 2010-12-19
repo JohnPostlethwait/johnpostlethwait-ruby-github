@@ -82,14 +82,16 @@ module GitHub
     # the 'master' branch, but this can be overridden (passed in as an 
     # argument.)
     def commits(branch = 'master')
+      return @commits if defined?(@commits)
+
       raw_commits = GitHub::API.json("/commits/list/#{self.owner}/#{self.name}/#{branch}", self.api_options)["commits"]
-      commits = []
+      @commits = []
 
       raw_commits.each do |c|
-        commits << GitHub::Commit.new(c)
+        @commits << GitHub::Commit.new(c)
       end
 
-      return commits
+      return @commits
     end
   end
 end
