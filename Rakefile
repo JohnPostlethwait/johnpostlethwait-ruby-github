@@ -1,2 +1,2 @@
 require 'rubygems'
-require './lib/ruby-github.rb'
+require './lib/johnpostlethwait-ruby-github.rb'

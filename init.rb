@@ -1,1 +1,1 @@
-require 'lib/ruby-github'
+require 'lib/johnpostlethwait-ruby-github'
