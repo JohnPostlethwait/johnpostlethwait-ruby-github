@@ -16,7 +16,7 @@ module GitHub
     end
 
     # Finds a specific public repository for a specific username. You may 
-    # optionally pass in an api_username and an api_token if you would like to
+    # optionally pass in an username and a token if you would like to
     # make calls to the API that are reserved to private/authenticated usage.
     # 
     # Usage:  GitHub::Repository.find 'JohnPostlethwait', 'ruby-github'
