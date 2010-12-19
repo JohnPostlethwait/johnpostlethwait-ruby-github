@@ -1,1 +1,1 @@
-require 'ruby-github'
+require 'lib/ruby-github'
