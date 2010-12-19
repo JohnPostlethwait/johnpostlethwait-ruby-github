@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "ruby-github"
-  s.version           = "0.1.1"
+  s.version           = "0.1.2"
   s.date              = "2010-12-18"
   s.summary           = "Simple Ruby library to access the GitHub API."
   s.email             = "john.postlethwait@gmail.com"
