@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors          = ["Michael Bleigh", 'John Postlethwait']
   spec.license          = ['MIT']
 
-  spec.files            = ['README.rdoc', 'Rakefile', 'init.rb', "lib/.rb", 'lib/models/*.rb']
+  spec.files            = ['README.rdoc', 'Rakefile', 'init.rb', "lib/ruby-github.rb", 'lib/models/commit.rb', 'lib/models/organization.rb', 'lib/models/repository.rb', 'lib/models/user.rb']
 
   spec.has_rdoc         = true
   spec.extra_rdoc_files = ["README.rdoc"]
